@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<!-- create the object for all bean class-->
+	<bean id="address" class="com.spring.entity.Address">
+		<!-- perform the setter injection-->
+		<property name="city" value="Berhampur"/>
+		<property name="state" value="Ganjam"/>
+		<property name="pincode" value="760001"/>
+	</bean>
+	<bean id="empAddress" class="com.spring.entity.Address">
+		<!-- perform the setter injection-->
+		<property name="city" value="Parikuda"/>
+		<property name="state" value="Puri"/>
+		<property name="pincode" value="752011"/>
+	</bean>
+	<bean id="organisation" class="com.spring.entity.Oraganisation">
+		<!-- perform the Setter injection -->
+		<property name="oraganisationName" value="Food-Delivery-Organisation"/>
+		<property name="oraganisationAddress" ref="address"/>
+	</bean>
+	<bean id="employee" class="com.spring.entity.Employee">
+		<!-- setter injection perform-->
+		<property name="empName" value="Biswojit Jena"/>
+		<property name="empSalary" value="25000.0"/>
+		<property name="empId" value="124356"/>
+		<property name="empAddress" ref="empAddress"/>
+		<property name="empBelongOraganisation" ref="organisation"/>
+	</bean>
+
+</beans>
