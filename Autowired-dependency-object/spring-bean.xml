@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+
+	<bean id="product1" class="com.spring.sbi.Product">
+
+
+	</bean>
+	<bean id="transction1" class="com.spring.sbi.Transaction">
+
+	</bean>
+	<!--<bean id="transaction" class="com.spring.sbi.Transaction"></bean>-->
+	<!--above the same class  two object is avialabe so ambiguite occur .
+	Because Bytype is check any object present in spring frame work type Tranaction or not 
+	if present then it check more than one or only one if more than one it create the exception
+	 other wise well executed -->
+
+	<bean id="order" class="com.spring.sbi.Order" autowire="byType">
+
+	</bean>
+
+
+</beans>

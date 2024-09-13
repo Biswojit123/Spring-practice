@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<!-- If Multiple dependecy object avialable (Here dependecy object is
+	product and transaction.multiple dependency object is Product)then how to
+	inject that dependecy object in constructor auto wiring. -->
+	<!-- When multiple dependecy object avialable in spring container at the
+	time of compareing between constructor argument and Bean type, then spring
+	container internally check the 'byType' autowired how it check the dependecy
+	object property name with bean id of spring container objects if matching then
+	dependecy object injected other wise ambiguity problem occur saying unique bean
+	object required but here found 3 object of same dependecy class-->
+	<bean id="product" class="com.spring.sbi.Product">
+	<!-- dependecy bean property found so this object will inject-->
+	</bean>
+	<bean id="p1" class="com.spring.sbi.Product">
+	<!-- this is not matching at the time of property name checking-->
+	</bean>
+	<bean id="p2" class="com.spring.sbi.Product">
+	<!-- This is not matching at the time of property name checking-->
+	</bean>
+
+	<bean id="transaction" class="com.spring.sbi.Transaction">
+	<!-- At the time of comparing argument type with bean object type -->
+	</bean>
+
+	<!-- Constructor autowired work with the Constructor injection it first
+	check the depency object type should be matched with constructor agrument.
+	other wise it not injected-->
+	<bean id="order1" class="com.spring.sbi.Order" autowire="constructor">
+	
+	</bean>
+	
+</beans>

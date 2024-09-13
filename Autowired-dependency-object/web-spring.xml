@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="transaction" class="com.spring.sbi.Transaction">
+		<property name="date" ref="date"/>
+		<property name="isSuccess" value="true"/>
+		<property name="transactionId" value="SBI200002536"/>
+		<property name="amount" value="20000.0"/>
+	</bean>
+	<bean id="date" class="java.util.Date">
+	
+	</bean>
+	<bean id="transaction1" class="com.spring.sbi.Transaction">
+		<property name="date" ref="date"/>
+		<property name="isSuccess" value="true"/>
+		<property name="transactionId" value="SBI200006598"/>
+		<property name="amount" value="34000.0"/>
+	</bean>
+	<bean id="account" class="com.spring.sbi.Account" autowire="byName">
+		<property name="holderName" value="Biswojit jena"/>
+		<property name="status" value="success"/>
+		<property name="toAccount" value="231000095623"></property>
+	</bean>
+</beans>
