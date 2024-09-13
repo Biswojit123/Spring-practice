@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<!-- When using the constuctor injection spring container at the time of
+	createing the object inject the value to the object ,first it will check the
+	parameter constructor present in the class and provided costructor argument
+	is match or not means if we create the constructor 2 para meter then we have to
+	pass the two constructorargument other wise give compile time error if it may
+	be order or not order that does't matter but number of parameter should be matched-->
+	<bean id="order" class="com.spring.order.Order">
+	<!-- Here we provide the 5 argument tag so we have to maintain the 5 argument constructor in Order class-->
+		<constructor-arg value="FTR25632565"></constructor-arg>
+		<constructor-arg value="Success fully packing"></constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key="23000.0" value="Ear-Boalt"></entry>
+				<entry key="56100.0" value="Tv-Samsung"></entry>
+				<entry key="56230.0" value="Apple-Iphone"></entry>
+				<entry key="78000.0" value="Sumsung-Galexy"></entry>
+			</map>
+		</constructor-arg>
+		<constructor-arg value="2"></constructor-arg>
+		<constructor-arg value="true"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>Ear-Boat</value>
+				<value>Tv-Sumsong</value>
+				<value>Washing-Mechine</value>
+				<value>Cooler</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<!-- Here we required the default constructor-->
+	<bean id="order1" class="com.spring.order.Order">
+	
+	</bean>
+	<!-- Here we required the 3 parameter constructor -->
+	<bean id="order2" class="com.spring.order.Order">
+		<constructor-arg index="0">
+			<list>
+				<value>Ear-Phone</value>
+				<value>Tv-Sumsung</value>
+				<value>Maxico</value>
+				<value>Network</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg index="2" value="2"></constructor-arg>
+		<constructor-arg index="1">
+			<map>
+				<entry key="56000.0" value="Ren-flex"></entry>
+				<entry key="45602.0" value="Master-card"></entry>
+				<entry key="56891.0" value="Laxery"></entry>
+			</map>
+		</constructor-arg>
+		<property name="quantity" value="5"></property>
+	</bean>
+</beans>
