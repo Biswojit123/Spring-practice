@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<!-- Configure the Student object-->
+	<bean id="student1" class="com.spring.depen.Student">
+	<!-- Setter injection now perform-->
+		<property name="id" value="123"/>
+		<property name="name" value="Biswojit"/>
+		<property name="subject">
+			<set>
+				<value>Java</value>
+				<value>C++</value>
+				<value>C#</value>
+				<value>Python</value>
+				<value>Oracle</value>
+				<value>Spring</value>
+			</set>
+		</property>
+		<property name="subWithMarks">
+			<map>
+				<entry key="Java" value="56"></entry>
+				<entry key="C++" value="58"></entry>
+				<entry key="C#" value="96"></entry>
+				<entry key="Python" value="89"></entry>
+				<entry key="Oracle" value="78"></entry>
+				<entry key="Spring" value="65"></entry>
+			</map>
+		</property>
+	</bean>
+	<!-- Object dependency-->
+	<bean id="college1" class="com.spring.depen.College">
+		<property name="collegeName" value="Khallikote Unitary University"/>
+		<property name="student" ref="student1"/>
+		<property name="department">
+			<set>
+				<value>MCA</value>
+				<value>Math</value>
+				<value>Biology</value>
+				<value>Hindi</value>
+			</set>
+		</property>
+	</bean>
+</beans>
