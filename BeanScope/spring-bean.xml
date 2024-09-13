@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<!-- Create the object by default singleton scope-->
+	<bean id="debitCard" class="com.spring.scope.DebitCard">
+		<property name="dabitCardNum" value="2563 2568 9564"></property>
+		<property name="cvv" value="009"></property>
+		<property name="expireDate" value="22/29 YEAR"></property>
+		<property name="name" value="Biswojit Jena"></property>
+	</bean>
+	
+	<!-- So we have to maintain the Object scope manually prototype-->
+	<bean id="debitCard1" class="com.spring.scope.DebitCard" scope="prototype">
+		<property name="dabitCardNum" value="4512 2356 7845"></property>
+		<property name="cvv" value="007"></property>
+		<property name="expireDate" value="23/56 YEAR"></property>
+		<property name="name" value="Jagan Palei"></property>
+	</bean>
+</beans>
