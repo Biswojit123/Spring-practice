@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="bank" class="com.spring.bank.SBIBank">
+	<!-- throw the Constructor injection-->
+		<constructor-arg value="SBI-Bank"></constructor-arg>
+		<constructor-arg value="Khallikote"></constructor-arg>
+		<constructor-arg >
+			<list>
+				<value>Account create</value>
+				<value>With-drawl</value>
+				<value>Debit-card</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key="Home-Loan" value="2000000"></entry>
+				<entry key="Married-Loan" value="500000"></entry>
+				<entry key="Farmer-Loan" value="600000"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+	<bean id="loan" class="com.spring.bank.Loan">
+		<!-- Throw Settre injection-->
+		<property name="bankToGetLoan" ref="bank"></property>
+		<property name="loanName" value="Home-Loan"></property>
+		<property name="amountProvide" value="2000000"></property>
+	</bean>
+	<bean id="holder" class="com.spring.bank.Holder">
+	<!-- throw the Constructor injection-->
+		<constructor-arg value="Jagan Palei"></constructor-arg>
+		<constructor-arg ref="loan"></constructor-arg>
+		<constructor-arg value="123456256"></constructor-arg>
+		<constructor-arg value="CCAPJ0489G"></constructor-arg>
+	</bean>
+</beans>
