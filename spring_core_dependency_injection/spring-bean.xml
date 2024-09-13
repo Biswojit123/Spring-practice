@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<!-- if we use setter injection to inject the value to the object .it possible
+after creating object the setter injection happen-->
+<beans>
+	<!-- Bean object(Employee class object configure for bean object creation)
+	creation tag by IOC container-->
+	<bean id="employee" class="com.spring.dependency.Employee">
+		<!-- For inject data to the  employee object use the property tag-->
+		<property name="name" value="Biswojit jena"></property>
+		<property name="age" value="22"></property>
+		<property name="salary" value="25000.0"></property>
+
+	</bean>
+
+	<!-- Now create another bean object-->
+	<bean id="employee1" class="com.spring.dependency.Employee">
+		<!-- use the setter injection to set the value to the our employee
+		object -->
+		<property name="name" value="Jagan palei"></property>
+		<property name="age" value="23"></property>
+		<property name="salary" value="23000.0"></property>
+	</bean>
+	
+	<!-- Create a Oder object so we have to coinfigure the that object details-->
+	<bean id="order1" class="com.spring.dependency.Orders">
+		<property name="orderId" value="ORD-IGF23564789"/>
+		<property name="productName" value="Bluetooth"/>
+		<property name="totalPrice" value="1399.00"/>
+		<property name="foodType" value="N"/>
+		<property name="isDelivery" value="true"/>
+		<property name="mobileNum" value="8260293404"/>
+		<!-- for list how to setter injection -->
+		<property name="productAvialable">
+			<list>
+				<value>Samsung-LED-TV</value>
+				<value>ASUS-LAPTOP</value>
+				<value>HP-LAPTOP</value>
+				<value>Key-Board</value>
+			</list>
+		</property>
+	</bean>
+</beans>
