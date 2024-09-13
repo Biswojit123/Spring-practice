@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="student" class="com.spring.entity.Student">
+		<property name="studentId" value="123456"/>
+		<property name="studentName" value="Biswojit Jena"/>
+		<property name="studentSubAndMarks">
+			<map>
+				<entry key="Eng" value="86"></entry>
+				<entry key="Math" value="89"></entry>
+				<entry key="MIL" value="99"></entry>
+				<entry key="HINDI" value="99"></entry>
+			</map>
+		</property>
+	</bean>
+</beans>

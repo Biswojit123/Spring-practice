@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="student1" class="com.spring.entity.Student">
+		<constructor-arg index="0" value="124578"/>
+		<constructor-arg index="1" value="Biswojit jena"/>
+		<constructor-arg index="2">
+			<map>
+				<entry key="Oracle" value="86"/>
+				<entry key="Java" value="90"/>
+				<entry key="Python" value="56"/>
+			</map>
+		</constructor-arg>
+	</bean>
+
+</beans>
